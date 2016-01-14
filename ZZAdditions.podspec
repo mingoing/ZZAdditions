@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     'ZZAdditions' => ['Pod/Assets/*.png']
   }
 
-  s.public_header_files = 'Pod/Classes/ZZAdditions.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit','QuartzCore', 'Accelerate'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
