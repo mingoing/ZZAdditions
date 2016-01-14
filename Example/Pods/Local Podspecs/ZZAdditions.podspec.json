@@ -1,6 +1,6 @@
 {
   "name": "ZZAdditions",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "Useful Objective C Categories and Classes",
   "description": "Useful Objective C Categories and Classes .",
   "homepage": "https://github.com/wlsy/ZZAdditions",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/wlsy/ZZAdditions.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "7.0"
@@ -22,7 +22,7 @@
       "Pod/Assets/*.png"
     ]
   },
-  "public_header_files": "Pod/Classes/ZZAdditions.h",
+  "public_header_files": "Pod/Classes/**/*.h",
   "frameworks": [
     "UIKit",
     "QuartzCore",

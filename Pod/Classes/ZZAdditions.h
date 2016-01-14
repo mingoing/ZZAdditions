@@ -53,6 +53,9 @@
 // UIFont
 #import "UIFont+Fit.h"
 
+// UINavigationBar
+#import "UINavigationBar+Additions.h"
+
 // UINavigationController
 #import "UINavigationController+CustomAnimations.h"
 

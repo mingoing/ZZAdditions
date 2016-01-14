@@ -1,5 +1,5 @@
 PODS:
-  - ZZAdditions (0.1.0)
+  - ZZAdditions (0.2.0)
 
 DEPENDENCIES:
   - ZZAdditions (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ZZAdditions: fa3c59015f21e420adcb502634a4cc48727b74b4
+  ZZAdditions: 79dd3f5015e0d7815e63711c92d9e638644ff11d
 
 COCOAPODS: 0.39.0
