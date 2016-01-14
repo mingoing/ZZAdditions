@@ -1,0 +1,31 @@
+{
+  "name": "ZZAdditions",
+  "version": "0.1.0",
+  "summary": "Useful Objective C Categories and Classes",
+  "description": "Useful Objective C Categories and Classes .",
+  "homepage": "https://github.com/wlsy/ZZAdditions",
+  "license": "MIT",
+  "authors": {
+    "zz": "zz@mou.io"
+  },
+  "source": {
+    "git": "https://github.com/wlsy/ZZAdditions.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "ZZAdditions": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "public_header_files": "Pod/Classes/ZZAdditions.h",
+  "frameworks": [
+    "UIKit",
+    "QuartzCore",
+    "Accelerate"
+  ]
+}

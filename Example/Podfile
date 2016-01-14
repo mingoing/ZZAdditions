@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+
+target 'ZZAdditions_Tests', :exclusive => true do
+  pod "ZZAdditions", :path => "../"
+
+  
+end

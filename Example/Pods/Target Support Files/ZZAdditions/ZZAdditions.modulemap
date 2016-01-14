@@ -1,0 +1,6 @@
+framework module ZZAdditions {
+  umbrella header "ZZAdditions-umbrella.h"
+
+  export *
+  module * { export * }
+}

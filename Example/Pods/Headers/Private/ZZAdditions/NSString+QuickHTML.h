@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/NSString/NSString+QuickHTML.h
