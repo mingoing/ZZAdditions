@@ -53,9 +53,6 @@
 // UIFont
 #import "UIFont+Fit.h"
 
-// UINavigationBar
-#import "UINavigationBar+Additions.h"
-
 // UINavigationController
 #import "UINavigationController+CustomAnimations.h"
 
@@ -68,5 +65,7 @@
 // UIView
 #import "UIView+Helpers.h"
 
+// UITextView
+#import "UITextView+Placeholder.h"
 
 #endif /* !ZZADDITIONS_H */
