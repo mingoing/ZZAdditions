@@ -9,6 +9,8 @@
 #import "NSString+Utilities.h"
 
 @implementation  NSString (UtilityExtensions)
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *) trimmedString
 {
@@ -61,6 +63,23 @@
     NSDate *date = [NSDate date];
     date = [formatter dateFromString:self];
     return date;
+}
+
++ (CGFloat)findHeightForText:(NSString *)text havingWidth:(CGFloat)widthValue andFont:(UIFont *)font {
+    CGFloat result = font.pointSize + 4;
+    if (text)
+    {
+        CGSize textSize = { widthValue, CGFLOAT_MAX };       //Width and height of text area
+        CGSize size;
+        //iOS 7
+        CGRect frame = [text boundingRectWithSize:textSize
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:@{ NSFontAttributeName:font }
+                                          context:nil];
+        size = CGSizeMake(frame.size.width, frame.size.height+1);
+        result = MAX(size.height, result); //At least one row
+    }
+    return result;
 }
 
 

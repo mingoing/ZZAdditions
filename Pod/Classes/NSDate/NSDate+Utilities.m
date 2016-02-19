@@ -379,4 +379,11 @@
     return [formatter stringFromDate:self];
 }
 
+-(NSDate *) toLocalTime
+{
+    NSTimeZone *tz = [NSTimeZone localTimeZone];
+    NSInteger seconds = [tz secondsFromGMTForDate: self];
+    return [NSDate dateWithTimeInterval: seconds sinceDate: self];
+}
+
 @end

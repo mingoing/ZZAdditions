@@ -74,4 +74,6 @@
 // for mongodb default date format
 - (NSString *)RFC3339ToString;
 
+- (NSDate *)toLocalTime;
+
 @end

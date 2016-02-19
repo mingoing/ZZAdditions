@@ -11,12 +11,16 @@
 
 
 @interface NSString (UtilityExtensions)
-- (NSString *) stringByAppendingRandomStringOfRandomLength;
-- (NSDate *) date;
+- (NSString *)stringByAppendingRandomStringOfRandomLength;
+- (NSDate *)date;
 - (NSDate *)RFC3339ToDate;
 
 @property (readonly) NSString *trimmedString;
 @property (readonly) NSDate *date;
+
++ (CGFloat)findHeightForText:(NSString *)text havingWidth:(CGFloat)widthValue andFont:(UIFont *)font;
+
+
 @end
 
 @interface NSString (UTF8String)

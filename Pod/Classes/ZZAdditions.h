@@ -33,10 +33,12 @@
 #import "NSString+Regex.h"
 #import "NSString+Trimming.h"
 #import "NSString+Utilities.h"
+#import "NSString+Qiniu.h"
 
 // NSURL
 #import "NSURL+ImageURL.h"
 #import "NSURL+PercentageEscapes.h"
+#import "NSURL+PathParameters.h"
 
 // UIColor
 #import "UIColor+Hex.h"
@@ -68,8 +70,13 @@
 // UITextView
 #import "UITextView+Placeholder.h"
 
-// UIActionSheet
+// Block
 #import "UIActionSheet+Blocks.h"
+#import "UIAlertView+Blocks.h"
+#import "UIImagePickerController+Block.h"
+
+// UIApplication
+#import "UIApplication+Additions.h"
 
 
 #endif /* !ZZADDITIONS_H */
