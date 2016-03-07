@@ -14,6 +14,7 @@
 - (NSString *)stringByAppendingRandomStringOfRandomLength;
 - (NSDate *)date;
 - (NSDate *)RFC3339ToDate;
+- (NSString *)MD5;
 
 @property (readonly) NSString *trimmedString;
 @property (readonly) NSDate *date;
