@@ -19,6 +19,7 @@
 
 
 + (NSString *)bundleName;
++ (NSString *)bundleVersion;
 + (NSString *)version;
 + (CGSize)screenSize;
 

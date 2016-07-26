@@ -10,11 +10,13 @@
 
 @interface UIImage (Additions)
 + (UIImage *)shootView:(UIView *)view;
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 - (UIImage *)imageWithBurnTint:(UIColor *)color;
 - (UIImage *)blurOnImageWithRadius:(CGFloat)blurRadius;
 
 - (UIColor *)averageColor;
+
 
 
 @end

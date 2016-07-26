@@ -14,6 +14,7 @@
 
 // NSData
 #import "NSData+Hex.h"
+#import "NSData+Utilities.h"
 
 // NSDate
 #import "NSDate+Utilities.h"
@@ -77,6 +78,9 @@
 
 // UIApplication
 #import "UIApplication+Additions.h"
+
+// UILabel
+#import "UILabel+FormattedText.h"
 
 
 #endif /* !ZZADDITIONS_H */

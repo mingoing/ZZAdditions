@@ -21,6 +21,13 @@
 
 + (CGFloat)findHeightForText:(NSString *)text havingWidth:(CGFloat)widthValue andFont:(UIFont *)font;
 
+- (NSString *)AES256EncryptWithKey:(NSString *)key;
+- (NSString *)AES256DecryptWithKey:(NSString *)key;
+
+- (BOOL)validateMobile;
+- (BOOL)validateEmail;
+- (BOOL)validateIdentityCard;
+    
 
 @end
 

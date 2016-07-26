@@ -35,6 +35,11 @@
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
+
++ (NSString *)bundleVersion {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+}
+
 + (NSString *)version {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }

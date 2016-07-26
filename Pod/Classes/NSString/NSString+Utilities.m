@@ -7,28 +7,15 @@
 //  BSD License, Use at your own risk
 
 #import "NSString+Utilities.h"
+#import "NSData+Hex.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "NSData+Utilities.h"
 
 @implementation  NSString (UtilityExtensions)
 
 - (NSString *)MD5 {
-    CC_MD5_CTX md5;
-    CC_MD5_Init (&md5);
-    CC_MD5_Update (&md5, [self UTF8String], (CC_LONG) [self length]);
-    
-    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5_Final (digest, &md5);
-    NSString *s = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-                   digest[0],  digest[1],
-                   digest[2],  digest[3],
-                   digest[4],  digest[5],
-                   digest[6],  digest[7],
-                   digest[8],  digest[9],
-                   digest[10], digest[11],
-                   digest[12], digest[13],
-                   digest[14], digest[15]];
-    
-    return s;
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return [data md5String];
 }
 
 
@@ -94,7 +81,7 @@
         CGSize size;
         //iOS 7
         CGRect frame = [text boundingRectWithSize:textSize
-                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                          options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                        attributes:@{ NSFontAttributeName:font }
                                           context:nil];
         size = CGSizeMake(frame.size.width, frame.size.height+1);
@@ -103,7 +90,59 @@
     return result;
 }
 
+- (BOOL)validateEmail {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:self];
+}
 
+- (BOOL)validateMobile {
+        NSString *MOBILE = @"^1[34578]\\d{9}$";
+    
+        NSPredicate *regexTestMobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",MOBILE];
+    
+        if ([regexTestMobile evaluateWithObject:self]) {
+        
+                   return YES;
+        
+            }else {
+            
+                        return NO;
+            
+        }
+    
+}
+
+- (BOOL)validateIdentityCard {
+    BOOL flag;
+    if (self.length <= 0) {
+        flag = NO;
+        return flag;
+    }
+    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+    return [identityCardPredicate evaluateWithObject:self];
+}
+
+- (NSString *)AES256EncryptWithKey:(NSString *)key
+{
+    NSData *plainData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [plainData AES256EncryptWithKey:key];
+    
+    NSString *encryptedString = [encryptedData base64Encoding];
+    
+    return encryptedString;
+}
+
+- (NSString *)AES256DecryptWithKey:(NSString *)key
+{
+    NSData *encryptedData = [NSData dataWithBase64EncodedString:self];
+    NSData *plainData = [encryptedData AES256DecryptWithKey:key];
+    
+    NSString *plainString = [[NSString alloc] initWithData:plainData encoding:NSUTF8StringEncoding];
+    
+    return plainString;
+}
 
 @end
 

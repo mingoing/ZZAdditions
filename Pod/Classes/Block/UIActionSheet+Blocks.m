@@ -115,6 +115,8 @@ static const void *UIActionSheetCancelBlockKey      = &UIActionSheetCancelBlockK
     }
     
     [actionSheet showInView:view];
+    actionSheet.tintColor = [UIColor blackColor];
+    
     
 #if !__has_feature(objc_arc)
     return [actionSheet autorelease];
@@ -170,6 +172,7 @@ static const void *UIActionSheetCancelBlockKey      = &UIActionSheetCancelBlockK
     }
     
     [actionSheet showFromRect:rect inView:view animated:animated];
+    
     
 #if !__has_feature(objc_arc)
     return [actionSheet autorelease];
@@ -254,11 +257,21 @@ static const void *UIActionSheetCancelBlockKey      = &UIActionSheetCancelBlockK
     if (originalDelegate && [originalDelegate respondsToSelector:@selector(willPresentActionSheet:)]) {
         [originalDelegate willPresentActionSheet:actionSheet];
     }
+    
+    for (UIView *_currentView in actionSheet.subviews)
+    {
+        if ([_currentView isKindOfClass:[UIButton class]])
+        {
+            UIButton *button = (UIButton *)_currentView;
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+    }
+
+
 }
 
 - (void)didPresentActionSheet:(UIActionSheet *)actionSheet {
     UIActionSheetBlock completion = actionSheet.didPresentBlock;
-    
     if (completion) {
         completion(actionSheet);
     }

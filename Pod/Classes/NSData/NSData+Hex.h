@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (helper)
-
+- (NSString *)md5String;
 - (NSString*)hexString;
 
 @end
