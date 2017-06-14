@@ -16,6 +16,8 @@
 - (NSDate *)RFC3339ToDate;
 - (NSString *)MD5;
 
++ (NSString*)addQueryStringToUrlString:(NSString *)urlString withDictionary:(NSDictionary *)dictionary;
+
 @property (readonly) NSString *trimmedString;
 @property (readonly) NSDate *date;
 

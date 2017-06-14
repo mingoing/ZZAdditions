@@ -22,7 +22,7 @@ pod "ZZAdditions"
 
 ## Author
 
-zz, zz@mou.io
+mouzz, zz@mou.io
 
 ## License
 

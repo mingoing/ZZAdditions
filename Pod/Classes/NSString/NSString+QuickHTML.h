@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (QuickHTML)
+- (NSString *)stringByStrippingHTML;
 - (NSString *)flattenHTML;
 - (NSString *)textForHTMLNodeAtIndex:(NSInteger)index;
 @end
